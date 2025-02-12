@@ -115,3 +115,25 @@ For any questions or issues, feel free to reach out:
 - **GitHub:** [frankmathewsajan](https://github.com/frankmathewsajan)
 - **Email:** frankmathewsajan@gmail.com
 
+## Extras
+```mermaid
+flowchart TD
+    A[Start] --> B{User Logged In?}
+    B -- Yes --> C[Show Dashboard]
+    B -- No --> D[Display Login/Register Page]
+    D --> E[User Logs In]
+    E --> B
+    C --> F{Select Action}
+    F -- "Register for Event" --> G[Display Event List]
+    G --> H[View Event Details]
+    H --> I[Register for Event]
+    F -- "Manage Study Groups" --> J[Display Group List]
+    J --> K[Create/Join Group]
+    F -- "Access Resources" --> L[Display Resource List]
+    L --> M[View Support Service Details]
+    I --> N[Show Confirmation]
+    K --> N
+    M --> N
+    N --> O[End]
+
+```

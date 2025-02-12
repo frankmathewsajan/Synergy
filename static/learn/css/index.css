@@ -1,8 +1,9 @@
+/* Centered grid container */
 .body-center {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 4x4 grid for laptops */
-    gap: 20px; /* Space between containers */
-    max-width: 80vw; /* Use full width of the screen */
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid for laptops & tablets */
+    gap: 20px;
+    max-width: 90vw;
     margin: auto;
     padding: 20px;
 }
@@ -10,35 +11,33 @@
 /* Section Container */
 .section-container {
     width: 100%;
-    height: 100%;
-    padding: 0; /* Remove internal padding */
+    min-height: 280px;
+    padding: 0;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     text-align: left;
-    background-image: linear-gradient(white 95%, #eaeaea 5%);
+    background: linear-gradient(white 90%, #eaeaea 10%);
     border: 2px dashed #ddd;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 250px; /* Increase height to use more space */
 }
 
 /* Content Styling */
 .content {
     font-family: 'Poppins', sans-serif;
     text-align: left;
-    padding: 10px 15px; /* Reduce padding to use max space */
+    padding: 15px;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.8);
-    flex-grow: 1; /* Ensures equal height */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
-/* Make text take full width */
+/* Text Styling */
 .content h1 {
-    font-size: 1.8rem; /* Increase font size for better visibility */
+    font-size: 1.8rem;
     color: #222;
     margin-bottom: 8px;
     text-transform: uppercase;
@@ -46,18 +45,18 @@
 }
 
 .content p {
-    font-size: 1.2rem; /* Make text slightly bigger */
+    font-size: 1.2rem;
     color: #555;
     margin-bottom: 12px;
     line-height: 1.6;
-    flex-grow: 1; /* Allows text to fill available space */
+    flex-grow: 1;
 }
 
 /* Button Styling */
 .content .btn {
-    display: inline-block;
+    align-self: flex-start;
     padding: 12px 18px;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-family: 'Amatic SC', cursive;
     background-color: #ffd700;
     color: #333;
@@ -67,7 +66,6 @@
     transition: all 0.3s ease-in-out;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-decoration: none;
-    align-self: flex-end;
 }
 
 .content .btn:hover {
@@ -75,18 +73,18 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive Grid */
+/* Responsive Adjustments */
 
-/* 2x2 grid on tablets */
-@media (max-width: 1200px) {
-    .body-center {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* 1x1 grid on phones */
+/* 1x1 grid for phones (Stacked layout) */
 @media (max-width: 768px) {
     .body-center {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Optional: Wider spacing for larger screens */
+@media (min-width: 1400px) {
+    .body-center {
+        max-width: 80vw;
     }
 }

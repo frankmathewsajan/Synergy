@@ -1,0 +1,42 @@
+{% extends 'learn/layout.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'learn/css/index.css' %}">
+    <style>
+        .content p {
+            line-height: 1.6;
+            flex-grow: 0.3;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+
+    <div class="body-center">
+    {% for event in events %}
+        <div class="section-container">
+            <div class="content">
+                <!-- Render the event title and description dynamically -->
+                <h1>{{ event.title }}</h1>
+                <p>{{ event.description }}</p>
+                <!-- You can add any additional event details here, for example: -->
+                <p>
+                  Start: {{ event.start_time }}<br>
+                  End: {{ event.end_time }}
+                </p>
+
+                <span>
+                    <br>
+                    <!-- Using a direct URL, or if you have a named URL, consider using  -->
+                    <a href="/events/{{ event.id }}/" style="background-color: #4ac1f7" class="btn">View</a>
+                    <!-- Add more relevant links here if needed -->
+                </span>
+            </div>
+        </div>
+    {% empty %}
+        <p>No events available.</p>
+    {% endfor %}
+</div>
+
+
+    <script src="{% static 'learn/js/index.js' %}"></script>
+{% endblock %}

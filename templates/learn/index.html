@@ -1,113 +1,16 @@
 {% extends 'learn/layout.html' %}
 {% load static %}
 {% block styles %}
-    <link rel="stylesheet" href="{% static 'learn/css/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'learn/css/index.css' %}">
-    <script src="https://kit.fontawesome.com/97fee35bc9.js" crossorigin="anonymous"></script>
-    <style>
-        /* Style for collapsible menu */
-        .hamburger-menu ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .hamburger-menu li {
-            cursor: pointer;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            font-weight: bold;
-        }
-
-        .hamburger-menu li i {
-            float: right;
-        }
-
-        .sub-menu {
-            display: none;
-            padding-left: 20px; /* Indentation for better visibility */
-        }
-
-        .sub-menu li {
-            font-weight: normal;
-            padding: 8px;
-        }
-
-        .sub-menu li:last-child {
-            border-bottom: none;
-        }
-    </style>
 {% endblock %}
 {% block body %}
-    <body>
-    <div class="navbar">
-        <!-- Hamburger Menu -->
-        <div class="hamburger" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="hamburger-menu" id="hamburgerMenu">
-            <!-- Add a close button to the hamburger menu -->
-            <div class="close" onclick="toggleMenu()">
-                <i class="fas fa-times"></i>
-            </div>
-            <h3>Menu</h3>
-            <ul>
-                <li onclick="toggleDropdown('resources')">
-                    Resources <i class="fas fa-caret-down"></i>
-                    <ul id="resources" class="sub-menu">
-                        <li><a href="/learn/resources/books/">📚 Books</a></li>
-                        <li><a href="/learn/resources/videos/">🎥 Video Tutorials</a></li>
-                        <li><a href="/learn/resources/challenges/">💻 Coding Challenges</a></li>
-                    </ul>
-                </li>
-                <li onclick="toggleDropdown('support')">
-                    Support <i class="fas fa-caret-down"></i>
-                    <ul id="support" class="sub-menu">
-                        <li><a href="/learn/support/mentors/">🧑‍🏫 Mentorship</a></li>
-                        <li><a href="/learn/support/doubts/">❓ Doubt Resolution</a></li>
-                        <li><a href="/learn/support/faqs/">📄 FAQs</a></li>
-                    </ul>
-                </li>
-                <li onclick="toggleDropdown('events')">
-                    Events <i class="fas fa-caret-down"></i>
-                    <ul id="events" class="sub-menu">
-                        <li><a href="/learn/events/hackathons/">🚀 Hackathons</a></li>
-                        <li><a href="/learn/events/competitions/">🏆 Coding Competitions</a></li>
-                        <li><a href="/learn/events/webinars/">🎙 Webinars</a></li>
-                    </ul>
-                </li>
-                <li onclick="toggleDropdown('groups')">
-                    Study Groups <i class="fas fa-caret-down"></i>
-                    <ul id="groups" class="sub-menu">
-                        <li><a href="/learn/groups/algorithms/">📌 Algorithm Club</a></li>
-                        <li><a href="/learn/groups/ml/">🤖 ML Group</a></li>
-                        <li><a href="/learn/groups/open-source/">🔓 Open-Source Contributors</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
 
-        <!-- Username Dropdown and Plus Icon -->
-        <div class="actions">
-            <div class="plus-icon">
-                <i class="fas fa-plus-circle"></i>
-            </div>
-            <div class="username-dropdown">
-                <span>{{ user.username }} <i class="fas fa-caret-down"></i></span>
-                <div class="username-dropdown-menu">
-                    <a href="/edit-profile/">Edit Profile</a>
-                    <a href="/logout/">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="body-center" style="padding:3rem; flex-direction: column">
-
+    <div class="body-center">
         <div class="section-container">
             <div class="content">
                 <h1>Events</h1>
                 <p>Join coding events, hackathons, and meetups to enhance your skills.</p>
-                <a href="/learn/events/" class="btn">Explore</a>
+                <a href="{% url 'event_list' %}" class="btn">Explore</a>
             </div>
         </div>
 
@@ -115,7 +18,7 @@
             <div class="content">
                 <h1>Study Groups</h1>
                 <p>Collaborate with peers, discuss problems, and improve together.</p>
-                <a href="/learn/groups/" class="btn">Join</a>
+                <a href="{% url 'group_list' %}" class="btn">View All</a>
             </div>
         </div>
 
@@ -134,19 +37,8 @@
                 <a href="/learn/support/" class="btn">Get Help</a>
             </div>
         </div>
+
     </div>
 
-    <script>
-        function toggleDropdown(id) {
-            const menu = document.getElementById(id);
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
-        }
-    </script>
-
     <script src="{% static 'learn/js/index.js' %}"></script>
-    </body>
 {% endblock %}

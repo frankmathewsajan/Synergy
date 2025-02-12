@@ -1,0 +1,128 @@
+/* General Styles */
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+/* Proper Centering Without Breaking Navbar */
+.body-center {
+    display: flex;
+    justify-content: center; /* Keeps it towards the left */
+    align-items: flex-start; /* Keeps it near the top */
+    width: 100%;
+    height: 100vh;
+    padding-top: 5rem; /* Prevents overlap with navbar */
+}
+
+/* Create Container */
+.create-container {
+    width: 90%;
+    max-width: 450px;
+    background: linear-gradient(white 90%, #eaeaea 10%);
+    border: 2px dashed #ddd;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px 50px 80px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 3rem; /* Moves slightly to the left */
+}
+
+/* Content */
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Heading */
+.content h1 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px #ccc;
+}
+
+/* Unified Input Styling */
+.content input,
+.content select,
+.content textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fafafa;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    font-family: inherit;
+    resize: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.content input:focus,
+.content select:focus,
+.content textarea:focus {
+    border-color: #ffb400;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 180, 0, 0.5);
+}
+
+/* Button Styling */
+.content .btn {
+    width: 40%;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-family: 'Amatic SC', cursive;
+    background-color: #ffd700;
+    float: right;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content .btn:hover {
+    background-color: #ffb400;
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .body-center {
+        padding-top: 4rem; /* Keeps navbar safe */
+        justify-content: center; /* Center on smaller screens */
+    }
+
+    .create-container {
+        margin-left: 0; /* Centers container on mobile */
+        padding: 20px;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .content input,
+    .content select,
+    .content textarea {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .content .btn {
+        font-size: 1rem;
+    }
+}
