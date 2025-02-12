@@ -1,0 +1,14 @@
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #f5f5dc;
+    font-family: 'Roboto Mono', monospace;
+    background-image: url('https://www.transparenttextures.com/patterns/notebook-dark.png');
+}
+
+.body-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

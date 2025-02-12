@@ -1,0 +1,101 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar .hamburger {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.navbar .hamburger-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #444;
+    color: white;
+    padding: 15px;
+    transition: left 0.3s;
+    visibility: hidden;
+}
+
+.navbar .hamburger-menu.active {
+    left: 0;
+    visibility: visible;
+    transition: right 0.3s;
+}
+
+.navbar .username-dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar .username-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #444;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 150px;
+    transition: opacity 0.2s ease;
+    opacity: 0;
+}
+
+.navbar .username-dropdown-menu[style*="display: block"] {
+    opacity: 1;
+}
+
+.navbar .username-dropdown:hover .username-dropdown-menu,
+.navbar .username-dropdown-menu:hover {
+    display: block;
+}
+
+/* Add spacing for the links */
+.navbar .username-dropdown-menu a {
+    display: block;
+    padding: 8px 0;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem; /* Increase font size */
+}
+
+.navbar .username-dropdown-menu a:hover {
+    background-color: #555;
+    border-radius: 3px;
+}
+
+.navbar .actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar .actions .plus-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.hamburger-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.hamburger-menu ul li {
+    padding: 10px 0;
+}
+
+.hamburger-menu ul li a {
+    color: white;
+    text-decoration: none;
+}

@@ -1,0 +1,12 @@
+{% extends 'learn/layout.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'learn/css/auth.css' %}">
+{% endblock %}
+{% block body %}
+    <body class="body-center">
+    <div class="login-container">
+        {% block form %}{% endblock %}
+    </div>
+    </body>
+{% endblock %}
